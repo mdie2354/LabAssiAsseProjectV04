@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<inbox>
+    <Student idStudent="3">
+        <nume>student</nume>
+        <grupa>123</grupa>
+        <mail>s3@gmail.com</mail>
+        <profesor>prof</profesor>
+    </Student>
+    <Student idStudent="10">
+        <nume>nume nume</nume>
+        <grupa>321</grupa>
+        <mail>nume@gmail.com</mail>
+        <profesor>prof</profesor>
+    </Student>
+</inbox>
