@@ -40,12 +40,17 @@ public class AppTest
     @Test
     public void addStudent2()
     {
-        Student st = new Student("101", "Alex1", 934, "alex", "Professor professor");
+        Student st = new Student("101", "Alexandru", 934, "alex", "Professor professor");
         Validator<Student> sv= new StudentValidator();
         StudentRepo repo = new StudentRepo(sv, "studenti.txt");
         ServiceStudent serviceSt = new ServiceStudent(repo);
-        serviceSt.add(st);
-        Student s = serviceSt.find("101");
-        assertEquals("Alex1", s.getNume());
+        try {
+            serviceSt.add(st);
+            Student s = serviceSt.find("101");
+            assertEquals("Alexandru", s.getNume());
+        }
+        catch (Exception ex){
+            assertEquals("\nEmail invalid", ex.getMessage());
+        }
     }
 }
