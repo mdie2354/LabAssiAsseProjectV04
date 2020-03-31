@@ -36,6 +36,9 @@ public class AppTest
         serviceTeme = new ServiceTeme(temeRepo);
     }
 
+    /**
+     * WBT
+     */
     @Test
     public void test_invalidAssignment() {
         Teme tema1 = new Teme(-1, "", -1, -2);
@@ -67,6 +70,9 @@ public class AppTest
         assertTrue( true );
     }
 
+    /**
+     * BBT
+     */
     @Test
     public void addStudent1()
     {
