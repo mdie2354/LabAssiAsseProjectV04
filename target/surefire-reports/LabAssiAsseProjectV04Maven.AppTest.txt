@@ -1,11 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: LabAssiAsseProjectV04Maven.AppTest
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.111 s <<< FAILURE! - in LabAssiAsseProjectV04Maven.AppTest
-addStudent2(LabAssiAsseProjectV04Maven.AppTest)  Time elapsed: 0.007 s  <<< ERROR!
-LabAssiAsseProjectV04Maven.src.Validator.ValidationException: 
-
-Email invalid
-Nume invalid
-	at LabAssiAsseProjectV04Maven.AppTest.addStudent2(AppTest.java:47)
-
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.072 s - in LabAssiAsseProjectV04Maven.AppTest
