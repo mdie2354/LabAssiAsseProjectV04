@@ -91,7 +91,7 @@ public class AppTest
     @Test
     public void addStudent2()
     {
-        //EC:6, 18
+        //EC:6, 18; BVA 3
         Student st = new Student("101", "Alexandru", 943, "alex", "Professor professor");
         try {
             serviceStudent.add(st);
@@ -105,7 +105,7 @@ public class AppTest
 
     @Test
     public void addStudent3(){
-        //EC:12,17
+        //EC:12,17; BVA 1
         Student st = new Student("", "Alex", 902, "alex@email.com", "Prof Prof");
         try {
             serviceStudent.add(st);
@@ -117,7 +117,7 @@ public class AppTest
 
     @Test
     public void addStudent4(){
-        //EC:10, 15, 21
+        //EC:10, 15, 21; BVA 2, 4
         Student st = new Student(null, "Alex", 938, "alex@email.com", "Prof Prof");
         try {
             serviceStudent.add(st);
@@ -129,7 +129,7 @@ public class AppTest
 
     @Test
     public void addStudent5(){
-        //EC:8,14,20
+        //EC:8,14,20; BVA 2, 4
         Student st = new Student("abc", "Alex", 110, "alex@email.com", "Prof Prof");
         try {
             serviceStudent.add(st);
@@ -141,51 +141,42 @@ public class AppTest
 
     @Test
     public void addStudent6(){
-        //BVA
+        //BVA 2,3, 4
         Student st = new Student("90", "Alex", 111, "alex@email.com", "Prof Prof");
-        try {
-            serviceStudent.add(st);
-        }
-        catch (Exception ex){
-            assertEquals("\nGrupa invalida", ex.getMessage());
-        }
+        Student st2 = serviceStudent.add(st);
+        assertEquals(st, st2);
     }
 
     @Test
     public void addStudent7(){
-        //BVA
+        //BVA 2, 4
         Student st = new Student("91", "Alex", 112, "alex@email.com", "Prof Prof");
-        try {
-            serviceStudent.add(st);
-        }
-        catch (Exception ex){
-            assertEquals("\nGrupa invalida", ex.getMessage());
-        }
+        Student st2 = serviceStudent.add(st);
+        assertEquals(st, st2);
     }
 
     @Test
     public void addStudent8(){
-        //BVA
+        //BVA 2, 4
         Student st = new Student("92", "Alex", 936, "alex@email.com", "Prof Prof");
-        serviceStudent.add(st);
-        Student s = serviceStudent.find("92");
-        assertEquals("Alex", s.getNume());
+        Student st2 = serviceStudent.add(st);
+        assertEquals(st, st2);
 
     }
 
     @Test
     public void addStudent9(){
-        //BVA
+        //BVA 2, 3, 4
         Student st = new Student("93", "Alex", 937, "alex@email.com", "Prof Prof");
-        serviceStudent.add(st);
-        Student s = serviceStudent.find("93");
-        assertEquals(937, s.getGrupa());
+
+        Student st2 = serviceStudent.add(st);
+        assertEquals(st, st2);
     }
 
 
     @Test
     public void addStudent10() {
-        //BVA
+        //BVA 3
         Student st = new Student("94", "Alex", 902, "alex@email.com", "Prof Prof");
         try {
             serviceStudent.add(st);
@@ -197,15 +188,21 @@ public class AppTest
 
     @Test
     public void addStudent11() {
-        //BVA
+        //BVA 3
         Student st = new Student("95", "Alex", 922, "alex@email.com", "Prof Prof");
-        serviceStudent.add(st);
-        Student s = serviceStudent.find("95");
-        assertEquals(922, s.getGrupa());
+
+        Student st2 = serviceStudent.add(st);
+        assertEquals(st, st2);
     }
 
+    @Test
+    public void addStudent12() {
+        //BVA 1
+        Student st = new Student("5", "Alex", 922, "alex@email.com", "Prof Prof");
 
-
+        Student st2 = serviceStudent.add(st);
+        assertEquals(st, st2);
+    }
 
 
 
