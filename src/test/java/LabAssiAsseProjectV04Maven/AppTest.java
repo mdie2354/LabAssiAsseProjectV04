@@ -83,9 +83,9 @@ public class AppTest
     //EC:1,3,5,7,9,11,13,16,19,22
     {
         Student st = new Student("100", "Alex", 934, "alex@email.com", "Professor Professor");
-        serviceStudent.add(st);
-        Student s = serviceStudent.find("100");
-        assertEquals("Alex", s.getNume());
+        Student st2 = serviceStudent.add(st);
+        //Student s = serviceStudent.find("100");
+        assertEquals(st, st2);
     }
 
     @Test

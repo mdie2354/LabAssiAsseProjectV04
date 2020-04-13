@@ -1,5 +1,7 @@
 package LabAssiAsseProjectV04Maven.src.Domain;
 
+import java.util.Objects;
+
 public class Student implements hasID<String> {
 
     private String idStudent;
@@ -50,7 +52,12 @@ public class Student implements hasID<String> {
         return idStudent+' '+nume+' '+grupa+' '+email+' '+profesor;
     }
     public boolean equals(Object object2) {
-        return object2 instanceof Student && this.email==((Student) object2).email && this.grupa==((Student) object2).grupa && this.idStudent==((Student) object2).idStudent && this.nume==((Student) object2).nume && this.profesor==((Student) object2).profesor;
+        return object2 instanceof Student && this.email.equals(((Student) object2).email) && this.grupa==((Student) object2).grupa && this.idStudent.equals(((Student) object2).idStudent) && this.nume.equals(((Student) object2).nume) && this.profesor.equals(((Student) object2).profesor);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(idStudent, nume, grupa, email, profesor);
     }
 }
 
