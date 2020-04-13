@@ -27,11 +27,16 @@ public class AppTest
 
     /* Lab 3 - In class*/
 
+    private StudentRepo studentRepo;
+    ServiceStudent serviceStudent;
+
     private TemeRepo temeRepo;
     private ServiceTeme serviceTeme;
 
     @Before
     public void setUp() {
+        studentRepo = new StudentRepo(new StudentValidator(), "studenti.txt");
+        serviceStudent = new ServiceStudent(studentRepo);
         temeRepo = new TemeRepo(new TemeValidator(), "teme.txt");
         serviceTeme = new ServiceTeme(temeRepo);
     }
@@ -75,33 +80,134 @@ public class AppTest
      */
     @Test
     public void addStudent1()
+    //EC:1,3,5,7,9,11,13,16,19,22
     {
         Student st = new Student("100", "Alex", 934, "alex@email.com", "Professor Professor");
-        Validator<Student> sv= new StudentValidator();
-        StudentRepo repo = new StudentRepo(sv, "studenti.txt");
-        ServiceStudent serviceSt = new ServiceStudent(repo);
-        serviceSt.add(st);
-        Student s = serviceSt.find("100");
+        serviceStudent.add(st);
+        Student s = serviceStudent.find("100");
         assertEquals("Alex", s.getNume());
     }
 
     @Test
     public void addStudent2()
     {
-        Student st = new Student("101", "Alexandru", 934, "alex", "Professor professor");
-        Validator<Student> sv= new StudentValidator();
-        StudentRepo repo = new StudentRepo(sv, "studenti.txt");
-        ServiceStudent serviceSt = new ServiceStudent(repo);
+        //EC:6, 18
+        Student st = new Student("101", "Alexandru", 943, "alex", "Professor professor");
         try {
-            serviceSt.add(st);
-            Student s = serviceSt.find("101");
+            serviceStudent.add(st);
+            Student s = serviceStudent.find("101");
             assertEquals("Alexandru", s.getNume());
         }
         catch (Exception ex){
-            assertEquals("\nEmail invalid", ex.getMessage());
+            assertEquals("\nGrupa invalida\nEmail invalid", ex.getMessage());
         }
+    }
+
+    @Test
+    public void addStudent3(){
+        //EC:12,17
+        Student st = new Student("", "Alex", 902, "alex@email.com", "Prof Prof");
+        try {
+            serviceStudent.add(st);
+        }
+        catch (Exception ex){
+            assertEquals("\nID invalid\nGrupa invalida", ex.getMessage());
+        }
+    }
+
+    @Test
+    public void addStudent4(){
+        //EC:10, 15, 21
+        Student st = new Student(null, "Alex", 938, "alex@email.com", "Prof Prof");
+        try {
+            serviceStudent.add(st);
+        }
+        catch (Exception ex){
+            assertEquals("\nID invalid\nGrupa invalida", ex.getMessage());
+        }
+    }
+
+    @Test
+    public void addStudent5(){
+        //EC:8,14,20
+        Student st = new Student("abc", "Alex", 110, "alex@email.com", "Prof Prof");
+        try {
+            serviceStudent.add(st);
+        }
+        catch (Exception ex){
+            assertEquals("\nID invalid\nGrupa invalida", ex.getMessage());
+        }
+    }
+
+    @Test
+    public void addStudent6(){
+        //BVA
+        Student st = new Student("90", "Alex", 111, "alex@email.com", "Prof Prof");
+        try {
+            serviceStudent.add(st);
+        }
+        catch (Exception ex){
+            assertEquals("\nGrupa invalida", ex.getMessage());
+        }
+    }
+
+    @Test
+    public void addStudent7(){
+        //BVA
+        Student st = new Student("91", "Alex", 112, "alex@email.com", "Prof Prof");
+        try {
+            serviceStudent.add(st);
+        }
+        catch (Exception ex){
+            assertEquals("\nGrupa invalida", ex.getMessage());
+        }
+    }
+
+    @Test
+    public void addStudent8(){
+        //BVA
+        Student st = new Student("92", "Alex", 936, "alex@email.com", "Prof Prof");
+        serviceStudent.add(st);
+        Student s = serviceStudent.find("92");
+        assertEquals("Alex", s.getNume());
+
+    }
+
+    @Test
+    public void addStudent9(){
+        //BVA
+        Student st = new Student("93", "Alex", 937, "alex@email.com", "Prof Prof");
+        serviceStudent.add(st);
+        Student s = serviceStudent.find("93");
+        assertEquals(937, s.getGrupa());
+    }
+
+
+    @Test
+    public void addStudent10() {
+        //BVA
+        Student st = new Student("94", "Alex", 902, "alex@email.com", "Prof Prof");
+        try {
+            serviceStudent.add(st);
+        }
+        catch (Exception ex){
+            assertEquals("\nGrupa invalida", ex.getMessage());
+        }
+    }
+
+    @Test
+    public void addStudent11() {
+        //BVA
+        Student st = new Student("95", "Alex", 922, "alex@email.com", "Prof Prof");
+        serviceStudent.add(st);
+        Student s = serviceStudent.find("95");
+        assertEquals(922, s.getGrupa());
     }
 
 
 
-}
+
+
+
+
+    }

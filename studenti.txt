@@ -12,6 +12,42 @@
         <mail>s3@gmail.com</mail>
         <profesor>prof</profesor>
     </Student>
+    <Student idStudent="90">
+        <nume>Alex</nume>
+        <grupa>111</grupa>
+        <mail>alex@email.com</mail>
+        <profesor>Prof Prof</profesor>
+    </Student>
+    <Student idStudent="91">
+        <nume>Alex</nume>
+        <grupa>112</grupa>
+        <mail>alex@email.com</mail>
+        <profesor>Prof Prof</profesor>
+    </Student>
+    <Student idStudent="92">
+        <nume>Alex</nume>
+        <grupa>936</grupa>
+        <mail>alex@email.com</mail>
+        <profesor>Prof Prof</profesor>
+    </Student>
+    <Student idStudent="93">
+        <nume>Alex</nume>
+        <grupa>937</grupa>
+        <mail>alex@email.com</mail>
+        <profesor>Prof Prof</profesor>
+    </Student>
+    <Student idStudent="94">
+        <nume>Alex</nume>
+        <grupa>922</grupa>
+        <mail>alex@email.com</mail>
+        <profesor>Prof Prof</profesor>
+    </Student>
+    <Student idStudent="95">
+        <nume>Alex</nume>
+        <grupa>922</grupa>
+        <mail>alex@email.com</mail>
+        <profesor>Prof Prof</profesor>
+    </Student>
     <Student idStudent="10">
         <nume>nume nume</nume>
         <grupa>321</grupa>
