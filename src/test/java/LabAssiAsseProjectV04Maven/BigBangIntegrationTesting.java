@@ -56,49 +56,34 @@ public class BigBangIntegrationTesting {
     }
 
     @Test
+    public void addStudent(){
+        Student s = new Student("22", "Diana", 934, "diana@email.com", "Prof Prof");
+        Student s2 = serviceStudent.add(s);
+        assertEquals(s, s2);
+    }
+
+    @Test
+    public void addTeme(){
+        Teme tema = new Teme(22, "Tema22", 1, 8);
+        Teme tema2 = serviceTeme.add(tema);
+        assertEquals(tema, tema2);
+    }
+
+    @Test
     public void addGrade() {
-        Student s = new Student("1", "Alex", 934, "alex@email.com", "Prof Prof");
-        Teme t = new Teme(100, "Tema5", 5, 7);
-        Map.Entry<String, Integer> id = new AbstractMap.SimpleEntry<>("1", 100);
-        Nota nota = new Nota(id, s, t, 10, 8);
+        Student s = new Student("22", "Diana", 934, "diana@email.com", "Prof Prof");
+        Teme t = new Teme(22, "Tema22", 1, 8);
+        Map.Entry<String, Integer> id = new AbstractMap.SimpleEntry<>("22", 22);
+        Nota nota = new Nota(id, s, t, 10, 6);
         Nota nota2 = serviceNote.add(nota, "1");
         assertEquals(nota, nota2);
     }
 
     @Test
-    public void addStudent(){
-        Student s = new Student("22", "Diana", 934, "diana@diana", "Prof Prof");
-        try {
-            serviceStudent.add(s);
-        } catch (ValidationException validationException) {
-            assertThat(validationException.getMessage(), is("\nEmail invalid"));
-        }
-    }
-
-    @Test
-    public void addTeme(){
-        Teme tema = new Teme(0, "Tema2", 1, 2);
-        try {
-            serviceTeme.add(tema);
-        } catch (ValidationException validationException) {
-            assertThat(validationException.getMessage(), is("\nID invalid"));
-        }
-    }
-
-    @Test
     public void BigBang(){
-        Student student = new Student("200", "Patricia", 934, "patri@email.com", "Prof Prof");
-        Teme teme = new Teme(200, "Tema200", 5, 9);
-        Map.Entry<String, Integer> id = new AbstractMap.SimpleEntry<>("200", 200);
-        Nota nota = new Nota(id, student, teme, 10, 7);
-        Student student1 = serviceStudent.add(student);
-        assertEquals(student, student1);
-
-        Teme teme1 = serviceTeme.add(teme);
-        assertEquals(teme, teme1);
-
-        Nota nota1 = serviceNote.add(nota, "2");
-        assertEquals(nota, nota1);
+        addStudent();
+        addTeme();
+        addGrade();
     }
 
 }

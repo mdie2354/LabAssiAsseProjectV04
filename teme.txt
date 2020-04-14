@@ -25,6 +25,11 @@
         <deadline>7</deadline>
         <sapt_primire>5</sapt_primire>
     </Tema>
+    <Tema nr="22">
+        <descriere>Tema22</descriere>
+        <deadline>8</deadline>
+        <sapt_primire>1</sapt_primire>
+    </Tema>
     <Tema nr="200">
         <descriere>Tema200</descriere>
         <deadline>9</deadline>

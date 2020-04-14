@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <inbox>
+    <Student idStudent="22">
+        <nume>Diana</nume>
+        <grupa>934</grupa>
+        <mail>diana@email.com</mail>
+        <profesor>Prof Prof</profesor>
+    </Student>
     <Student idStudent="100">
         <nume>Alex</nume>
         <grupa>934</grupa>

@@ -54,3 +54,19 @@
         <valoare>10.0</valoare>
     </Nota>
 </Note>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Note>
+    <Nota idNota="2222">
+        <nume>Diana</nume>
+        <nr>22</nr>
+        <valoare>10.0</valoare>
+    </Nota>
+</Note>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Note>
+    <Nota idNota="2222">
+        <nume>Diana</nume>
+        <nr>22</nr>
+        <valoare>10.0</valoare>
+    </Nota>
+</Note>
