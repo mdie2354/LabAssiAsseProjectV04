@@ -150,7 +150,7 @@ public class AppTest
     @Test
     public void addTema8(){
         //Path 4: 1-2-3-5-7-9-10-11-15
-        Teme tema = new Teme(101, "Tema5", 5, 7);
+        Teme tema = new Teme(150, "Tema5", 5, 7);
         Teme tema2 = serviceTeme.add(tema);
         assertEquals(tema, tema2);
     }
