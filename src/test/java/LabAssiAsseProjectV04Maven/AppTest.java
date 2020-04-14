@@ -198,7 +198,7 @@ public class AppTest
     @Test
     public void addStudent12() {
         //BVA 1
-        Student st = new Student("5", "Alex", 922, "alex@email.com", "Prof Prof");
+        Student st = new Student("5", "Alex", 936, "alex@email.com", "Prof Prof");
 
         Student st2 = serviceStudent.add(st);
         assertEquals(st, st2);

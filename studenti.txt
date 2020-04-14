@@ -14,7 +14,7 @@
     </Student>
     <Student idStudent="5">
         <nume>Alex</nume>
-        <grupa>922</grupa>
+        <grupa>936</grupa>
         <mail>alex@email.com</mail>
         <profesor>Prof Prof</profesor>
     </Student>
