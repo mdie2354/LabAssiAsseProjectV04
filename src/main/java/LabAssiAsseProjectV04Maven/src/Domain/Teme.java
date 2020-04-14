@@ -40,4 +40,7 @@ public class Teme implements hasID<Integer>{
     public String toString(){
         return nr.toString()+' '+descriere+' '+sapt_primire.toString()+' '+deadline.toString();
     }
+    public boolean equals(Object object2) {
+        return object2 instanceof Teme && this.nr.equals(((Teme) object2).nr) && this.descriere.equals(((Teme) object2).descriere) && this.sapt_primire.equals(((Teme) object2).sapt_primire) && this.deadline.equals(((Teme) object2).deadline);
+    }
 }

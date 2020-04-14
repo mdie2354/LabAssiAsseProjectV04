@@ -12,7 +12,6 @@ import LabAssiAsseProjectV04Maven.src.Service.ServiceTeme;
 import LabAssiAsseProjectV04Maven.src.Validator.StudentValidator;
 import LabAssiAsseProjectV04Maven.src.Validator.TemeValidator;
 import LabAssiAsseProjectV04Maven.src.Validator.ValidationException;
-import LabAssiAsseProjectV04Maven.src.Validator.Validator;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -28,7 +27,7 @@ public class AppTest
     /* Lab 3 - In class*/
 
     private StudentRepo studentRepo;
-    ServiceStudent serviceStudent;
+    private ServiceStudent serviceStudent;
 
     private TemeRepo temeRepo;
     private ServiceTeme serviceTeme;
@@ -42,7 +41,7 @@ public class AppTest
     }
 
     /**
-     * WBT
+     * WBT, Add Tema
      */
     @Test
     public void test_invalidAssignment() {
@@ -64,6 +63,98 @@ public class AppTest
         }
     }
 
+    @Test
+    public void addTema1(){
+        //Path 1: 1-2-3-4-12-13-15
+        //id < 1
+        Teme tema = new Teme(0, "Tema2", 1, 2);
+        try {
+            serviceTeme.add(tema);
+        } catch (ValidationException validationException) {
+            assertThat(validationException.getMessage(), is("\nID invalid"));
+        }
+    }
+
+    @Test
+    public void addTema2(){
+        //Path 1: 1-2-3-4-12-13-15
+        //id = null
+        Teme tema = new Teme(null, "Tema2", 1, 2);
+        try {
+            serviceTeme.add(tema);
+        } catch (ValidationException validationException) {
+            assertThat(validationException.getMessage(), is("\nID invalid"));
+        }
+    }
+
+    @Test
+    public void addTema3(){
+        //Path 2: 1-2-3-5-6-12-13-15
+        //deadline < sapt_primire
+        Teme tema = new Teme(10, "Tema3", 3, 2);
+        try {
+            serviceTeme.add(tema);
+        } catch (ValidationException validationException) {
+            assertThat(validationException.getMessage(), is("\nDeadline invalid"));
+        }
+    }
+
+    @Test
+    public void addTema4(){
+        //Path 2: 1-2-3-5-6-12-13-15
+        //deadline > 14
+        Teme tema = new Teme(10, "Tema3", 3, 15);
+        try {
+            serviceTeme.add(tema);
+        } catch (ValidationException validationException) {
+            assertThat(validationException.getMessage(), is("\nDeadline invalid"));
+        }
+    }
+
+    @Test
+    public void addTema5(){
+        //Path 2: 1-2-3-5-6-12-13-15
+        //deadline < 1
+        Teme tema = new Teme(10, "Tema3", 3, 0);
+        try {
+            serviceTeme.add(tema);
+        } catch (ValidationException validationException) {
+            assertThat(validationException.getMessage(), is("\nDeadline invalid"));
+        }
+    }
+
+    @Test
+    public void addTema6(){
+        //Path 3: 1-2-3-5-7-8-12-13-15
+        //sapt_primire < 1
+        Teme tema = new Teme(11, "Tema4", 0, 2);
+        try {
+            serviceTeme.add(tema);
+        } catch (ValidationException validationException) {
+            assertThat(validationException.getMessage(), is("\nSaptamana in care tema a fost primita este invalida"));
+        }
+    }
+
+    @Test
+    public void addTema7(){
+        //Path 3: 1-2-3-5-7-8-12-13-15
+        //sapt_primire > 14
+        Teme tema = new Teme(11, "Tema4", 15, 7);
+        try {
+            serviceTeme.add(tema);
+        } catch (ValidationException validationException) {
+            assertThat(validationException.getMessage(), is("\nDeadline invalid\nSaptamana in care tema a fost primita este invalida"));
+        }
+    }
+
+    @Test
+    public void addTema8(){
+        //Path 4: 1-2-3-5-7-9-10-11-15
+        Teme tema = new Teme(101, "Tema5", 5, 7);
+        Teme tema2 = serviceTeme.add(tema);
+        assertEquals(tema, tema2);
+    }
+
 
     /**
      * Rigorous Test :-)
@@ -76,7 +167,7 @@ public class AppTest
     }
 
     /**
-     * BBT
+     * BBT, Add Student
      */
     @Test
     public void addStudent1()
@@ -203,8 +294,4 @@ public class AppTest
         Student st2 = serviceStudent.add(st);
         assertEquals(st, st2);
     }
-
-
-
-
-    }
+}
