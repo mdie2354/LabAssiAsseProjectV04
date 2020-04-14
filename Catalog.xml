@@ -22,3 +22,35 @@
         <valoare>8.0</valoare>
     </Nota>
 </Note>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Note>
+    <Nota idNota="1100">
+        <nume>Alex</nume>
+        <nr>100</nr>
+        <valoare>10.0</valoare>
+    </Nota>
+</Note>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Note>
+    <Nota idNota="1100">
+        <nume>Alex</nume>
+        <nr>100</nr>
+        <valoare>10.0</valoare>
+    </Nota>
+</Note>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Note>
+    <Nota idNota="1100">
+        <nume>Alex</nume>
+        <nr>100</nr>
+        <valoare>10.0</valoare>
+    </Nota>
+</Note>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Note>
+    <Nota idNota="200200">
+        <nume>Patricia</nume>
+        <nr>200</nr>
+        <valoare>10.0</valoare>
+    </Nota>
+</Note>
