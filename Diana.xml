@@ -18,3 +18,23 @@
         <feedback>1</feedback>
     </Nota>
 </Note>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Note>
+    <Nota idNota="2222">
+        <nr>29</nr>
+        <valoare>9.0</valoare>
+        <predat>6</predat>
+        <deadline>8</deadline>
+        <feedback>1</feedback>
+    </Nota>
+</Note>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Note>
+    <Nota idNota="2222">
+        <nr>29</nr>
+        <valoare>9.0</valoare>
+        <predat>6</predat>
+        <deadline>8</deadline>
+        <feedback>1</feedback>
+    </Nota>
+</Note>

@@ -6,6 +6,12 @@
         <mail>diana@email.com</mail>
         <profesor>Prof Prof</profesor>
     </Student>
+    <Student idStudent="29">
+        <nume>Diana</nume>
+        <grupa>934</grupa>
+        <mail>diana@email.com</mail>
+        <profesor>Prof Prof</profesor>
+    </Student>
     <Student idStudent="100">
         <nume>Alex</nume>
         <grupa>934</grupa>
